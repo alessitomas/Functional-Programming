@@ -37,6 +37,9 @@ let rec lst_length lst =
   match lst with
   | [] -> 0
   | _ :: t -> 1 + lst_length t ;;
+
+(* let count_elements lst = 
+  let a *)
   
 
 (* Biggest *)
@@ -72,10 +75,18 @@ print_endline "" ;;
 (* Faça uma função que recebe uma tupla ponto (x,y) e retorna um texto indicando se x e y são
 iguais, x é maior ou y é maior. *)
 
-let compare_x_y xy = 
+(* let compare_x_y xy = 
   if x = y then "Equals" else
     if x > y then "X is bigger than Y" else
-      "Y is Bigger than X"  ;;
+      "Y is Bigger than X"  ;; *)
+
+
+  let compare_x_y (x, y) = 
+    match x, y with
+    | x, y when x = y -> "Equals"
+    | x, y when x > y -> "X is bigger then y"
+    | _ -> "Y is bigger that X" ;;
+  
 
 
 print_string (compare_x_y (26, 26)) ;;
